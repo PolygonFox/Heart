@@ -77,7 +77,6 @@ int main(int argc, char** args)
 	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, IBO);
 	glBufferData(GL_ELEMENT_ARRAY_BUFFER, indices.size() * sizeof(GLuint), &indices[0], GL_STATIC_DRAW);
 	
-	
 	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, sizeof(Vertex), (GLvoid*)offsetof(Vertex, Vertex::position));
 	glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, sizeof(Vertex), (GLvoid*)offsetof(Vertex, Vertex::normal));
 	glEnableVertexAttribArray(0);
@@ -90,20 +89,20 @@ int main(int argc, char** args)
 	
 	mat4 model;
 
-	mat4 projection = glm::perspective(45.0f, (float)640 / 480, 1.0f, 100.0f);
+	mat4 projection;
+	projection = glm::perspective(45.0f, (float)640 / 480, 0.1f, 100.0f);
 
 	mat4 view;
-	view = translate(view, vec3(0, 0, -2));
+	view = translate(view, vec3(0, 0, -1));
 
 	while (!window.shouldWindowClose())
 	{
 		window.clear();
-
-		mat4 mvp =  projection * view * model;
+		mat4 mvp = projection * view * model;
 		glUniformMatrix4fv(basicShader.getUniformLocation("mvp"), 1, GL_FALSE, glm::value_ptr(mvp));
 
-		model = translate(model, vec3(0, 0, 0));
-		//model = rotate(model, 1.0f, vec3(1.0f, 0.0f, 0.0f));
+		//model = translate(model, vec3(-0.1, 0, 0));
+		model = rotate(model, 0.1f, vec3(1.0f, 1.0f, 0.0f));
 		
 		basicShader.use();
 		glBindVertexArray(VAO);

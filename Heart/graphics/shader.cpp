@@ -2,6 +2,7 @@
 
 
 #include <string>
+#include <algorithm>
 
 namespace Heart {
 	namespace Graphics {
@@ -69,7 +70,16 @@ namespace Heart {
 
 		GLuint Shader::getUniformLocation(char* name)
 		{
-			return glGetUniformLocation(m_Program, name);
+			std::map<char*, GLint>::iterator it = m_uniformLocations.find(name);
+			
+			if(it != m_uniformLocations.end())
+			{ 
+				return m_uniformLocations[name];
+			}
+
+			GLint loc = glGetUniformLocation(m_Program, name);
+			m_uniformLocations[name] = loc;
+			return loc;
 		}
 	}
 }

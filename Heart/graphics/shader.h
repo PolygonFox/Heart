@@ -2,7 +2,7 @@
 
 #include "../general.h"
 #include <GL\glew.h>
-
+#include <map>
 
 namespace Heart {
 	namespace Graphics {
@@ -14,6 +14,7 @@ namespace Heart {
 			void use();
 			GLuint getUniformLocation(char* name);
 		private:
+			std::map<char*, GLint> m_uniformLocations;
 			GLuint m_Program;
 		};
 	}
