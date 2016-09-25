@@ -2,6 +2,10 @@
 
 #include <iostream>
 #include <string>
+#include <glm\glm.hpp>
+
+#define SCREEN_WIDTH  1366
+#define SCREEN_HEIGHT 768
 
 // 1 = Debug mode, 2 = Release mode
 #define DEBUG 1
@@ -32,3 +36,4 @@ public:
 		return result;
 	}
 };
+

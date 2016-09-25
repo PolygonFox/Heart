@@ -1,6 +1,6 @@
 #include "mesh.h"
 
-
+#include <iostream>
 #include <vector>
 #include <stddef.h> // offsetof
 
@@ -90,9 +90,16 @@ namespace Heart {
 		{
 			m_Shader->use();
 			glBindVertexArray(m_VAO);
-			glDrawElements(GL_TRIANGLES, m_numIndices, GL_UNSIGNED_INT, 0);
+				glDrawElements(GL_TRIANGLES, m_numIndices, GL_UNSIGNED_INT, 0);
 			glBindVertexArray(0);
 		}
+
+		Shader* Mesh::getShader() const
+		{
+			return m_Shader;
+		}
+
+	
 
 	}
 }

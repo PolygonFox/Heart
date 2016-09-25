@@ -128,14 +128,25 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="camera.cpp" />
+    <ClCompile Include="application.cpp" />
+    <ClCompile Include="graphics\mesh.cpp" />
     <ClCompile Include="graphics\shader.cpp" />
     <ClCompile Include="graphics\window.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="object3d.cpp" />
+    <ClCompile Include="scene.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="application.h" />
+    <ClInclude Include="camera.h" />
     <ClInclude Include="general.h" />
+    <ClInclude Include="graphics\mesh.h" />
     <ClInclude Include="graphics\shader.h" />
     <ClInclude Include="graphics\window.h" />
+    <ClInclude Include="object3d.h" />
+    <ClInclude Include="raytrace.h" />
+    <ClInclude Include="scene.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="assets\shaders\shader.frag" />

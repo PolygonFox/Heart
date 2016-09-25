@@ -1,8 +1,9 @@
 #pragma once
 
 #include "shader.h"
-#include <GL\glew.h>
+#include "../object3d.h"
 
+#include <GL\glew.h>
 
 #include <glm\glm.hpp>
 #include <glm\gtc\type_ptr.hpp>
@@ -11,13 +12,13 @@
 namespace Heart {
 	namespace Graphics {
 
-
-		class Mesh {
+		class Mesh : public Object3D {
 		public:
 
 			Mesh(const char* fileName, Shader* shader);
 			~Mesh();
 			void draw();
+			Shader* getShader() const;
 		private:
 			int m_numIndices;
 			GLuint m_VAO;
