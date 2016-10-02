@@ -11,7 +11,6 @@ class Window;
 
 namespace Heart {
 
-
 	using namespace Graphics;
 
 	class Application {
@@ -19,14 +18,24 @@ namespace Heart {
 		Application();
 		~Application();
 		void tick();
-		void init();
+		void init(Scene* scene);
 		void draw();
+		static Application* instance;
+		static Camera* getActiveCamera() {
+			return Application::instance->m_ActiveCamera;
+		}
+		static int getTime()
+		{
+			return Application::instance->m_time;
+		}
 
 	private:
 		char* m_Name = "Test Application!";
-		Scene* m_ActiveScene;
+		Scene m_Scene;
 		Window* m_Window;
 		Camera* m_ActiveCamera;
+		int m_time;
+	
 	};
 
 }

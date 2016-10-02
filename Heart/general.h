@@ -37,3 +37,23 @@ public:
 	}
 };
 
+struct Vertex {
+	Vertex() {}
+
+	Vertex(glm::vec3 position, glm::vec3 normal, glm::vec2 texcoord)
+		: position(position), normal(normal), texcoord(texcoord)
+	{
+
+	}
+
+	Vertex(glm::vec3 position, glm::vec3 normal) 
+		: position(position), normal(normal)
+	{
+
+	}
+	glm::vec3 position;
+	glm::vec3 normal;
+	glm::vec2 texcoord;
+};
+
+

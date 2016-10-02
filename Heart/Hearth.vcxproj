@@ -70,14 +70,14 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <IncludePath>$(SolutionDir)\dependencies\GLFW\include;$(SolutionDir)\dependencies\GLEW\include;$(SolutionDir)\dependencies\GLM\include;$(SolutionDir)\dependencies\Assimp\include;$(IncludePath)</IncludePath>
-    <LibraryPath>$(SolutionDir)\dependencies\GLFW\library;$(SolutionDir)\dependencies\GLEW\library;$(SolutionDir)\dependencies\Assimp\library;$(LibraryPath)</LibraryPath>
+    <IncludePath>$(SolutionDir)\dependencies\GLFW\include;$(SolutionDir)\dependencies\GLEW\include;$(SolutionDir)\dependencies\GLM\include;$(SolutionDir)\dependencies\Assimp\include;$(SolutionDir)\dependencies\SOIL\include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(SolutionDir)\dependencies\GLFW\library;$(SolutionDir)\dependencies\GLEW\library;$(SolutionDir)\dependencies\Assimp\library;$(SolutionDir)\dependencies\SOIL\library;$(LibraryPath)</LibraryPath>
     <OutDir>$(SolutionDir)bin\$(Configuration)\</OutDir>
     <IntDir>$(SolutionDir)bin\$(Configuration)\intermediates</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-    <IncludePath>$(SolutionDir)\dependencies\GLFW\include;$(SolutionDir)\dependencies\GLEW\include;$(SolutionDir)\dependencies\GLM\include;$(SolutionDir)\dependencies\Assimp\include;$(IncludePath)</IncludePath>
-    <LibraryPath>$(SolutionDir)\dependencies\GLFW\library;$(SolutionDir)\dependencies\GLEW\library;$(SolutionDir)\dependencies\Assimp\library;$(LibraryPath)</LibraryPath>
+    <IncludePath>$(SolutionDir)\dependencies\GLFW\include;$(SolutionDir)\dependencies\GLEW\include;$(SolutionDir)\dependencies\GLM\include;$(SolutionDir)\dependencies\Assimp\include;$(SolutionDir)\dependencies\SOIL\include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(SolutionDir)\dependencies\GLFW\library;$(SolutionDir)\dependencies\GLEW\library;$(SolutionDir)\dependencies\Assimp\library;$(SolutionDir)\dependencies\SOIL\library;$(LibraryPath)</LibraryPath>
     <OutDir>$(SolutionDir)bin\$(Configuration)\</OutDir>
     <IntDir>$(SolutionDir)bin\$(Configuration)\intermediates</IntDir>
   </PropertyGroup>
@@ -89,7 +89,7 @@
       <PreprocessorDefinitions>GLEW_STATIC;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>opengl32.lib;glfw3.lib;glew32s.lib;assimp-vc130-mtd.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>opengl32.lib;glfw3.lib;glew32s.lib;assimp-vc130-mtd.lib;SOIL.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -111,7 +111,7 @@
     <Link>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <AdditionalDependencies>opengl32.lib;glfw3.lib;glew32s.lib;assimp-vc130-mtd.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>opengl32.lib;glfw3.lib;glew32s.lib;assimp-vc130-mtd.lib;SOIL.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -134,18 +134,23 @@
     <ClCompile Include="graphics\shader.cpp" />
     <ClCompile Include="graphics\window.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="materials\material.cpp" />
     <ClCompile Include="object3d.cpp" />
+    <ClCompile Include="resourcemanager.cpp" />
     <ClCompile Include="scene.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="application.h" />
     <ClInclude Include="camera.h" />
     <ClInclude Include="general.h" />
+    <ClInclude Include="graphics\geometry.h" />
     <ClInclude Include="graphics\mesh.h" />
     <ClInclude Include="graphics\shader.h" />
     <ClInclude Include="graphics\window.h" />
+    <ClInclude Include="materials\material.h" />
     <ClInclude Include="object3d.h" />
     <ClInclude Include="raytrace.h" />
+    <ClInclude Include="resourcemanager.h" />
     <ClInclude Include="scene.h" />
   </ItemGroup>
   <ItemGroup>

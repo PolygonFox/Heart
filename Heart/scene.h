@@ -13,10 +13,10 @@ namespace Heart {
 	public:
 		Scene();
 		~Scene();
-		void add(Mesh& mesh);
+		void add(Mesh mesh);
 		void draw(Camera* camera);
 	private:
-		std::vector<Mesh*> m_Meshes;
+		std::vector<Mesh> m_Meshes;
 	};
 
 }

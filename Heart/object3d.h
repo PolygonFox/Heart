@@ -22,9 +22,6 @@ namespace Heart {
 
 		void updateMatrix();
 		mat4 getMatrix() const;
-
-		void setName(char* name) { m_Name = name; }
-		char* getName(char* name) { return (m_Name == NULL) ? "Unnamed Object" : m_Name; }
 		
 	private:
 		vec3 m_Position;
@@ -32,7 +29,5 @@ namespace Heart {
 		vec3 m_Scale = vec3(1,1,1);
 
 		mat4 m_Matrix;
-
-		char* m_Name;
 	};
 }

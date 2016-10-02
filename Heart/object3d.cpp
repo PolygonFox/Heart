@@ -54,8 +54,8 @@ namespace Heart {
 	{
 		mat4 mat;
 		mat = glm::scale(mat, m_Scale);
-		mat *= glm::eulerAngleXYZ(m_Rotation.x, m_Rotation.y, m_Rotation.z);
 		mat = glm::translate(mat, m_Position);
+		mat *= glm::eulerAngleXYZ(m_Rotation.x, m_Rotation.y, m_Rotation.z);
 
 		m_Matrix = mat;
 	}

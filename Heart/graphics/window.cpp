@@ -12,13 +12,16 @@ namespace Heart {
 				LOG("Failed to initialize GLFW!");
 			}
 
-			//glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
-			//glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
+			glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
+			glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
 			//glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
 			//glfwWindowHint(GLFW_RESIZABLE, GL_FALSE);
 			//glViewport(0, 0, 640, 480);
 
+
+
 			m_Window = glfwCreateWindow(width, height, title, NULL, NULL);
+			glfwMakeContextCurrent(m_Window);
 
 			if (!m_Window)
 			{
@@ -33,13 +36,15 @@ namespace Heart {
 			//GLFWcursor* cursor = glfwCreateStandardCursor(GLFW_HAND_CURSOR);
 			//glfwSetCursor(m_Window, cursor);
 
-			glfwMakeContextCurrent(m_Window);
 			
 			glewExperimental = GL_TRUE;
 			glewInit();
 
 			glEnable(GL_DEPTH_TEST);
+			glEnable(GL_TEXTURE_2D);
+		
 			glDepthFunc(GL_LESS);
+
 			glClearColor(0.2f, 0.2f, 0.2f, 1.0f);
 		};
 
