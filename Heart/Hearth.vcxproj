@@ -70,14 +70,14 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <IncludePath>$(SolutionDir)\dependencies\GLFW\include;$(SolutionDir)\dependencies\GLEW\include;$(SolutionDir)\dependencies\GLM\include;$(SolutionDir)\dependencies\Assimp\include;$(SolutionDir)\dependencies\SOIL\include;$(IncludePath)</IncludePath>
-    <LibraryPath>$(SolutionDir)\dependencies\GLFW\library;$(SolutionDir)\dependencies\GLEW\library;$(SolutionDir)\dependencies\Assimp\library;$(SolutionDir)\dependencies\SOIL\library;$(LibraryPath)</LibraryPath>
+    <IncludePath>$(SolutionDir)\dependencies\GLFW\include;$(SolutionDir)\dependencies\GLEW\include;$(SolutionDir)\dependencies\GLM\include;$(SolutionDir)\dependencies\Assimp\include;$(SolutionDir)\dependencies\SOIL\include;$(SolutionDir)\dependencies\OpenAL\include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(SolutionDir)\dependencies\GLFW\library;$(SolutionDir)\dependencies\GLEW\library;$(SolutionDir)\dependencies\Assimp\library;$(SolutionDir)\dependencies\SOIL\library;$(SolutionDir)\dependencies\OpenAL\include;$(LibraryPath)</LibraryPath>
     <OutDir>$(SolutionDir)bin\$(Configuration)\</OutDir>
     <IntDir>$(SolutionDir)bin\$(Configuration)\intermediates</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-    <IncludePath>$(SolutionDir)\dependencies\GLFW\include;$(SolutionDir)\dependencies\GLEW\include;$(SolutionDir)\dependencies\GLM\include;$(SolutionDir)\dependencies\Assimp\include;$(SolutionDir)\dependencies\SOIL\include;$(IncludePath)</IncludePath>
-    <LibraryPath>$(SolutionDir)\dependencies\GLFW\library;$(SolutionDir)\dependencies\GLEW\library;$(SolutionDir)\dependencies\Assimp\library;$(SolutionDir)\dependencies\SOIL\library;$(LibraryPath)</LibraryPath>
+    <IncludePath>$(SolutionDir)\dependencies\GLFW\include;$(SolutionDir)\dependencies\GLEW\include;$(SolutionDir)\dependencies\GLM\include;$(SolutionDir)\dependencies\Assimp\include;$(SolutionDir)\dependencies\SOIL\include;$(SolutionDir)\dependencies\OpenAL\include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(SolutionDir)\dependencies\GLFW\library;$(SolutionDir)\dependencies\GLEW\library;$(SolutionDir)\dependencies\Assimp\library;$(SolutionDir)\dependencies\SOIL\library;$(SolutionDir)\dependencies\OpenAL\include;$(LibraryPath)</LibraryPath>
     <OutDir>$(SolutionDir)bin\$(Configuration)\</OutDir>
     <IntDir>$(SolutionDir)bin\$(Configuration)\intermediates</IntDir>
   </PropertyGroup>
@@ -133,6 +133,7 @@
     <ClCompile Include="graphics\mesh.cpp" />
     <ClCompile Include="graphics\shader.cpp" />
     <ClCompile Include="graphics\window.cpp" />
+    <ClCompile Include="input.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="materials\material.cpp" />
     <ClCompile Include="object3d.cpp" />
@@ -147,6 +148,7 @@
     <ClInclude Include="graphics\mesh.h" />
     <ClInclude Include="graphics\shader.h" />
     <ClInclude Include="graphics\window.h" />
+    <ClInclude Include="input.h" />
     <ClInclude Include="materials\material.h" />
     <ClInclude Include="object3d.h" />
     <ClInclude Include="raytrace.h" />

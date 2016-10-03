@@ -1,5 +1,6 @@
 #include "window.h"
 
+#include "../input.h"
 #include <GLFW\glfw3.h>
 
 namespace Heart {
@@ -30,8 +31,9 @@ namespace Heart {
 			}
 
 			glfwSetWindowUserPointer(m_Window, this);
-			glfwSetCursorPosCallback(m_Window, cursor_position_callback);
-			glfwSetMouseButtonCallback(m_Window, mouse_click_callback);
+			glfwSetKeyCallback(m_Window, Input::keyCallback);
+			glfwSetCursorPosCallback(m_Window, Input::cursorPosCallback);
+			glfwSetMouseButtonCallback(m_Window, Input::mouseButtonCallback);
 
 			//GLFWcursor* cursor = glfwCreateStandardCursor(GLFW_HAND_CURSOR);
 			//glfwSetCursor(m_Window, cursor);
@@ -79,7 +81,6 @@ namespace Heart {
 			Window* window = (Window*)glfwGetWindowUserPointer(_window);
 			window->m_CursorPosition.x = (float)xpos;
 			window->m_CursorPosition.y = (float)ypos;
-
 		}
 
 		void Window::mouse_click_callback(GLFWwindow * _window, int button, int action, int mods)

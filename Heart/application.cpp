@@ -1,6 +1,7 @@
 #include "application.h"
 #include <glm\gtc\matrix_transform.hpp>
 
+#include "input.h"
 #include "resourcemanager.h"
 
 namespace Heart {
@@ -115,6 +116,7 @@ namespace Heart {
 		m_Window = new Window("Game", SCREEN_WIDTH, SCREEN_HEIGHT);
 		m_Scene = Scene();
 
+		Input::initialise();
 		ResourceManager::initialise();
 
 		this->init(&m_Scene);
@@ -137,6 +139,7 @@ namespace Heart {
 	{
 		m_time += 1;
 		this->draw();
+		Input::update();
 	}
 
 	void Application::init(Scene* scene)

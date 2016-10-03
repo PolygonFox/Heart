@@ -18,6 +18,7 @@ namespace Heart {
 		loadShader(Shaders::BASIC, "assets/shaders/shader.vert", "assets/shaders/shader.frag");
 		loadShader(Shaders::TEXTURED, "assets/shaders/shader2.vert", "assets/shaders/shader2.frag");
 
+
 		// Material
 		createMaterial(getShader(1));
 	}

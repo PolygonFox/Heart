@@ -1,9 +1,8 @@
 #pragma once
 
-#include <glm\glm.hpp>
+#include <glm/glm.hpp>
 
 using namespace glm;
-
 
 namespace Heart {
 

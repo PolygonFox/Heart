@@ -1,6 +1,7 @@
 #include "scene.h"
 
 #include "resourcemanager.h"
+#include "input.h"
 
 namespace Heart {
 
@@ -19,9 +20,11 @@ namespace Heart {
 
 	void Scene::draw(Camera* camera) {
 
+		//LOG(Input::getAxis(MOUSE_X));
 		for (int i = 0; i < m_Meshes.size(); i++)
 		{
-			m_Meshes[i].rotateX(0.01);
+		//	m_Meshes[i].rotateX(0.01 * Input::getAxis(MOUSE_X));
+		//	m_Meshes[i].rotateY(0.01 * Input::getAxis(MOUSE_Y));
 			m_Meshes[i].updateMatrix();
 			camera->updateMatrix();
 			m_Meshes[i].draw();
